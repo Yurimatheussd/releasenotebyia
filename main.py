@@ -21,8 +21,10 @@ def main():
     while True:
         if not text_problem_global:
             text_problem_global = input('Digite o problema da sua issue: ')
+            print('\n')
         if not text_solution_global:
-            text_solution_global = input('Digite a solução sugerida da sua issue: ')
+            text_solution_global = input('Digite a solução sugerida da sua issue:')
+            print('\n')
         
         text_param_text_problem =\
             'A seguir vou te passar o texto de um problema de um release note'\
@@ -45,10 +47,10 @@ def main():
 
         # Copiar para area de transferencia
         pyperclip.copy('PROBLEMA: ' + response_problem.text + '\n' + 'SOLUÇÃO: ' + response_solution.text)
-        
+        print('\n')
         # Imprimir o problema e a solução gerados
-        print('PROBLEMA: ' + response_problem.text)
-        print('SOLUÇÃO: ' + response_solution.text)
+        print('PROBLEMA: ' + response_problem.text +'\n')
+        print('SOLUÇÃO: ' + response_solution.text +'\n')
 
         choice = input("Escolha uma opção:\n1. Nova Consulta\n2. Refresh na resposta\n3. Sair\n").strip()
 
@@ -59,6 +61,7 @@ def main():
             continue
         elif choice == '2':
             # Dar refresh na resposta
+            print('\n')
             continue
         elif choice == '3':
             break
